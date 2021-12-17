@@ -3,25 +3,25 @@ var generateBtn = document.querySelector("#generate");
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var beta = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+var char = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '"', "'", ',', '.', '<', '>', '/', '?', '`', '~'];
 
 // Write password to the #password input
 function writePassword() {
 
-  var length = prompt("how long your password?");
+  var length = prompt("How long do you want your password (between 8-128)?");
 
   if (length < 8 || length > 128 || isNaN(length)) {
     alert('Please choose a length of at least 8 characters and no more than 128 characters.');
     return;
   }
 
-  var lower = confirm("lowercase?");
-  var upper = confirm("uppercase?");
-  var number = confirm("numbers?");
-  var special = confirm("special characters?");
+  var lower = confirm("Include lowercase letters?");
+  var upper = confirm("Include uppercase letters?");
+  var number = confirm("Include numbers?");
+  var special = confirm("Include special characters?");
 
   if (!lower && !upper && !number && !special) {
-    alert('Please select at least 1 of the 4 options to generate password.');
+    alert('Please select at least 1 of the 4 options to generate a password.');
     return;
   }
 
